@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ChatGPTAdvisor from "./ChatGPTAdvisor"; // ✅ ChatGPT component import
 
 const Suggestions = () => {
   const [suggestions, setSuggestions] = useState([]);
@@ -31,14 +32,16 @@ const Suggestions = () => {
       <h2 className="text-3xl font-bold text-center text-teal-400 mb-10">
         Smart Suggestions for You
       </h2>
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+      {/* 💡 Suggestion Cards */}
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
         {suggestions.length === 0 ? (
           <p className="text-center col-span-3 text-gray-300">Loading suggestions...</p>
         ) : (
           suggestions.map((s) => (
             <div
               key={s.id}
-              className="bg-[#102c44] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300"
+              className="bg-[#102c44] p-6 rounded-xl shadow-lg hover:shadow-teal-500/20 transition duration-300"
             >
               <h3 className="text-xl font-semibold text-teal-300 mb-2">{s.title}</h3>
               <p className="text-gray-200">{s.detail}</p>
@@ -46,8 +49,17 @@ const Suggestions = () => {
           ))
         )}
       </div>
+
+      {/* 🤖 ChatGPT Financial Advisor */}
+      <div className="max-w-3xl mx-auto">
+        <h3 className="text-2xl font-semibold text-teal-300 mb-4 text-center">
+          Still Confused? Get Personalized Advice from ChatGPT
+        </h3>
+        <ChatGPTAdvisor defaultPrompt="Give me smart financial tips for someone saving ₹5000 per month" />
+      </div>
     </div>
   );
 };
 
 export default Suggestions;
+

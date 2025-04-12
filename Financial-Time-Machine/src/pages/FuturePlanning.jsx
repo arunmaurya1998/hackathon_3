@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import EMICalculator from "./EMICalculator";
 
 const FuturePlanning = () => {
   const [plans, setPlans] = useState([]);
@@ -46,6 +47,7 @@ const FuturePlanning = () => {
           ))
         )}
       </div>
+      <EMICalculator/>
     </div>
   );
 };

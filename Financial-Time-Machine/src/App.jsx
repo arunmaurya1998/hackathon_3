@@ -15,7 +15,7 @@ import ContactPage from "./pages/ContactPage";
 import Footer from "./comonents/Footer";
 import InputUserData from "./pages/InputUserData";
 import Signup from "./pages/Signup";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 
 
 function App() {
